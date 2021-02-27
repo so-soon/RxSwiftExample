@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		259C602C25EA1CD900400CC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259C602A25EA1CD900400CC8 /* Main.storyboard */; };
 		259C602E25EA1CDB00400CC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 259C602D25EA1CDB00400CC8 /* Assets.xcassets */; };
 		259C603125EA1CDB00400CC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259C602F25EA1CDB00400CC8 /* LaunchScreen.storyboard */; };
+		259C603D25EA205900400CC8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259C603C25EA205900400CC8 /* ViewModel.swift */; };
 		D67ACA83160875C185EE34F6 /* Pods_RxSwiftExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8981B871D0C22729CDCC8B0E /* Pods_RxSwiftExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		259C602D25EA1CDB00400CC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		259C603025EA1CDB00400CC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		259C603225EA1CDB00400CC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		259C603C25EA205900400CC8 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		6D6BFA3A5EC8F69D3A84BF7A /* Pods-RxSwiftExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftExample.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftExample/Pods-RxSwiftExample.debug.xcconfig"; sourceTree = "<group>"; };
 		8981B871D0C22729CDCC8B0E /* Pods_RxSwiftExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		961CC3E65A4BCF84A147344D /* Pods-RxSwiftExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftExample.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftExample/Pods-RxSwiftExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				259C602425EA1CD900400CC8 /* AppDelegate.swift */,
 				259C602625EA1CD900400CC8 /* SceneDelegate.swift */,
 				259C602825EA1CD900400CC8 /* ViewController.swift */,
+				259C603C25EA205900400CC8 /* ViewModel.swift */,
 				259C602A25EA1CD900400CC8 /* Main.storyboard */,
 				259C602D25EA1CDB00400CC8 /* Assets.xcassets */,
 				259C602F25EA1CDB00400CC8 /* LaunchScreen.storyboard */,
@@ -80,7 +83,6 @@
 				6D6BFA3A5EC8F69D3A84BF7A /* Pods-RxSwiftExample.debug.xcconfig */,
 				961CC3E65A4BCF84A147344D /* Pods-RxSwiftExample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,6 +210,7 @@
 			files = (
 				259C602925EA1CD900400CC8 /* ViewController.swift in Sources */,
 				259C602525EA1CD900400CC8 /* AppDelegate.swift in Sources */,
+				259C603D25EA205900400CC8 /* ViewModel.swift in Sources */,
 				259C602725EA1CD900400CC8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
