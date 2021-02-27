@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var textFieldPassword: UITextField!
     @IBOutlet weak var buttonLogin: UIButton!
     
+    @IBOutlet weak var imgViewIdValidation: UIImageView!
+    @IBOutlet weak var imgViewPWValidation: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
