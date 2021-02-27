@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var imgViewIdValidation: UIImageView!
     @IBOutlet weak var imgViewPWValidation: UIImageView!
     
-    //MARK:- BehaviorSubject
+    
     
     //MARK:- Properties
     let viewModel = ViewModel()
@@ -33,21 +33,33 @@ class ViewController: UIViewController {
         bindUI()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        disposeBag = DisposeBag()
+    }
+    
     func bindUI(){
+        // Input
         textFieldId.rx.text.orEmpty
-            .map(self.viewModel.isValidId)
-            .subscribe(onNext: {
-                        isValid in
-                        self.imgViewIdValidation.isHidden = !isValid
-            })
+            .bind(to: viewModel.subjectId)
             .disposed(by: disposeBag)
         
         textFieldPassword.rx.text.orEmpty
-            .map(self.viewModel.isValidPassword)
-            .subscribe(onNext: {
-                isValid in
-                self.imgViewPWValidation.isHidden = !isValid
-            })
+            .bind(to: viewModel.subjectPassword)
+            .disposed(by: disposeBag)
+        
+        //Output
+        
+        viewModel.subjectIdValid
+            .bind(to: imgViewIdValidation.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        viewModel.subjectPasswordValid
+            .bind(to: imgViewPWValidation.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+        Observable.combineLatest(viewModel.subjectIdValid, viewModel.subjectPasswordValid, resultSelector:
+                                    {(s1 , s2) in s1 && s2})
+            .bind(to: buttonLogin.rx.isEnabled)
             .disposed(by: disposeBag)
     }
 

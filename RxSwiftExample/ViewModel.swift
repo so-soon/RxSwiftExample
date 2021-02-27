@@ -9,9 +9,26 @@ import RxSwift
 import Foundation
 
 class ViewModel {
+    //MARK:- BehaviorSubject
+    
+    let subjectId = BehaviorSubject<String>(value: "")
+    let subjectPassword = BehaviorSubject<String>(value: "")
+    
+    let subjectIdValid = BehaviorSubject<Bool>(value: false)
+    let subjectPasswordValid = BehaviorSubject<Bool>(value: false)
+    
+    var disposeBag = DisposeBag()
     
     init() {
+        _ = subjectId
+            .distinctUntilChanged()
+            .map(isValidId)
+            .bind(to: subjectIdValid)
         
+        _ = subjectPassword
+            .distinctUntilChanged()
+            .map(isValidPassword(_:))
+            .bind(to: subjectPasswordValid)
     }
     
     func isValidId(_ id : String) -> Bool{
